@@ -8,8 +8,19 @@ import { NavController } from 'ionic-angular';
 })
 export class MyTreesPage {
 
-  constructor(public navCtrl: NavController) {
-
-  }
+    private myTrees = [
+        {
+            name    : 'Bonsai 1',
+            style   : 'Chokkan',
+            type    : 'Arce'
+        },
+        {
+            name    : 'Bonsai 2',
+            style   : 'Moyogi',
+            type    : 'Ficus'
+        }
+    ];
+    constructor(public navCtrl: NavController) {
+    }
 
 }
