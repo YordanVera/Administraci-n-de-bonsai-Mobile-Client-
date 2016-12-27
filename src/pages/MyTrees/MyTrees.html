@@ -1,9 +1,11 @@
 <ion-header>
     <ion-navbar>
-        <button ion-button icon-only (click)="openMenu()" clear>
-            <ion-icon name='menu'></ion-icon>
-        </button>
         <ion-title>Mis Bonsai</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="addBonsai()">
+                <ion-icon name='add'></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
@@ -13,8 +15,8 @@
             <ion-thumbnail item-left>
                 <img src="">
             </ion-thumbnail>
-            <h2>{{tree.name}}</h2>
-            <h3>{{tree.type}} - {{tree.style}}</h3>
+            <h2>{{tree.name}} #{{tree.id_tree}}</h2>
+            <h3>{{tree.common_name}} - {{tree.style}}</h3>
         </ion-item>
     </ion-list>
 </ion-content>
