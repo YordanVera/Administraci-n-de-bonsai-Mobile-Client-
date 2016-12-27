@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-Calendar',
-  templateUrl: 'Calendar.html'
+    selector: 'page-Calendar',
+    templateUrl: 'Calendar.html'
 })
 export class CalendarPage {
 
-  constructor(public navCtrl: NavController) {
-
-  }
+    constructor(public navCtrl: NavController, public menuCtrl: MenuController) {
+    }
 
 }
