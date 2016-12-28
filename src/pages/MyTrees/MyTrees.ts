@@ -3,6 +3,8 @@ import { NavController, MenuController, ModalController } from 'ionic-angular';
 import { NewBonsaiModal } from './NewBonsaiModal/NewBonsaiModal';
 import { TreeService } from '../../services/tree.service';
 import { Tree } from '../../models/tree.model';
+import { TreeProfilePage } from './TreeProfilePage/TreeProfile';
+
 @Component({
   selector      : 'page-MyTrees',
   templateUrl   : 'MyTrees.html',
@@ -30,5 +32,8 @@ export class MyTreesPage {
             this.treeService.getTrees()
             .then(trees => this.myTrees = trees);
         });
+    }
+    openTreeProfile(tree){
+        this.navCtrl.push(TreeProfilePage, {tree: tree});
     }
 }

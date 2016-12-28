@@ -7,6 +7,7 @@ import { CalendarPage }                             from '../pages/Calendar/Cale
 import { SearchPage }                               from '../pages/Search/Search';
 import { TaskPage }                                 from '../pages/Task/Task';
 import { NewBonsaiModal }                           from '../pages/MyTrees/NewBonsaiModal/NewBonsaiModal';
+import { TreeProfilePage }                          from '../pages/MyTrees/TreeProfilePage/TreeProfile';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NewBonsaiModal }                           from '../pages/MyTrees/NewBo
     SearchPage,
     CalendarPage,
     TaskPage,
-    NewBonsaiModal
+    NewBonsaiModal,
+    TreeProfilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +31,8 @@ import { NewBonsaiModal }                           from '../pages/MyTrees/NewBo
     SearchPage,
     CalendarPage,
     TaskPage,
-    NewBonsaiModal
+    NewBonsaiModal,
+    TreeProfilePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

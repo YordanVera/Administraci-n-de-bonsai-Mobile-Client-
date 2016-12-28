@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{ tree.name }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--<ion-avatar>
+        
+    </ion-avatar>-->
+
+    <!--buscar info completa, consultar tareas pendientes, historial-->
+    <div padding>
+        <button ion-button full (click)="showTask()">
+            <div *ngIf="isShowTask">Ocultar Tareas</div>
+            <div *ngIf="!isShowTask">Mostrar Tareas</div>        
+        </button>
+    </div>
+
+    <ion-list *ngIf="isShowTask">
+        <ion-list-header>
+            Tareas pendientes
+        </ion-list-header>
+        <ion-item>
+            10/10/10 Poda
+        </ion-item>
+        <ion-item>
+            12/10/10 Tratamiento
+        </ion-item>
+        <ion-item>
+            14/10/10 Alambrado
+        </ion-item>
+    </ion-list>
+
+    <div padding>
+        <button ion-button full (click)="showRecord()">
+            <div *ngIf="isShowRecord">Ocultar Historial</div>
+            <div *ngIf="!isShowRecord">Mostrar Historial</div>        
+        </button>
+    </div>
+
+    <ion-list *ngIf="isShowRecord">
+        <ion-list-header>
+            Historial de tareas realizadas
+        </ion-list-header>
+        <ion-item>
+            10/9/10 Alambrado
+        </ion-item>
+        <ion-item>
+            12/9/10 Tratamiento mosca blanca
+        </ion-item>
+        <ion-item>
+            14/9/10 Alambrado
+        </ion-item>
+    </ion-list>
+
+</ion-content>
