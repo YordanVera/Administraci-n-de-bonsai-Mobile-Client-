@@ -1,59 +1,100 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      {{ tree.name }}
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            {{ tree.name }}
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <!--<ion-avatar>
-        
-    </ion-avatar>-->
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="option">
+            <ion-segment-button value="info">
+                Info
+            </ion-segment-button>
+            <ion-segment-button value="task">
+                Tareas
+            </ion-segment-button>
+            <ion-segment-button value="record">
+                Historial
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 
-    <!--buscar info completa, consultar tareas pendientes, historial-->
-    <div padding>
-        <button ion-button full (click)="showTask()">
-            <div *ngIf="isShowTask">Ocultar Tareas</div>
-            <div *ngIf="!isShowTask">Mostrar Tareas</div>        
-        </button>
+    <div [ngSwitch]="option">
+        <ion-card *ngSwitchCase="'info'">
+            <!--<img src="img/nin-live.png" />-->
+            <ion-card-content>
+                <ion-card-title>
+                    Nine Inch Nails Live
+                </ion-card-title>
+                <p>
+                    The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-list *ngSwitchCase="'task'">
+            <ion-item-sliding *ngFor="let task of taskList">
+                <ion-item>
+                    <h2>{{task.date}}</h2>
+                    <h3>{{task.title}}</h3>
+                </ion-item>
+                <ion-item-options>
+                    <button ion-button color="light" icon-left>
+                        <ion-icon name="ios-more"></ion-icon>
+                        Más
+                    </button>
+                    <button ion-button color="primary" icon-left>
+                        <ion-icon name="trash"></ion-icon>
+                        Eliminar
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'record'">
+            <ion-item-sliding>
+                <ion-item>
+                    <h2>Fecha</h2>
+                    <h3>Tarea realizada</h3>
+                </ion-item>
+                <ion-item-options>
+                    <button ion-button color="light" icon-left>
+                        <ion-icon name="ios-more"></ion-icon>
+                        More
+                    </button>
+                    <button ion-button color="primary" icon-left>
+                        <ion-icon name="text"></ion-icon>
+                        Text
+                    </button>
+                    <button ion-button color="secondary" icon-left>
+                        <ion-icon name="call"></ion-icon>
+                        Call
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
+
+            <ion-item-sliding>
+                <ion-item>
+                    <h2>Fecha</h2>
+                    <h3>Tarea realizada</h3>
+                </ion-item>
+                <ion-item-options>
+                    <button ion-button color="light" icon-left>
+                        <ion-icon name="ios-more"></ion-icon>
+                        More
+                    </button>
+                    <button ion-button color="primary" icon-left>
+                        <ion-icon name="text"></ion-icon>
+                        Text
+                    </button>
+                    <button ion-button color="secondary" icon-left>
+                        <ion-icon name="call"></ion-icon>
+                        Call
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
     </div>
-
-    <ion-list *ngIf="isShowTask">
-        <ion-list-header>
-            Tareas pendientes
-        </ion-list-header>
-        <ion-item>
-            10/10/10 Poda
-        </ion-item>
-        <ion-item>
-            12/10/10 Tratamiento
-        </ion-item>
-        <ion-item>
-            14/10/10 Alambrado
-        </ion-item>
-    </ion-list>
-
-    <div padding>
-        <button ion-button full (click)="showRecord()">
-            <div *ngIf="isShowRecord">Ocultar Historial</div>
-            <div *ngIf="!isShowRecord">Mostrar Historial</div>        
-        </button>
-    </div>
-
-    <ion-list *ngIf="isShowRecord">
-        <ion-list-header>
-            Historial de tareas realizadas
-        </ion-list-header>
-        <ion-item>
-            10/9/10 Alambrado
-        </ion-item>
-        <ion-item>
-            12/9/10 Tratamiento mosca blanca
-        </ion-item>
-        <ion-item>
-            14/9/10 Alambrado
-        </ion-item>
-    </ion-list>
-
 </ion-content>
