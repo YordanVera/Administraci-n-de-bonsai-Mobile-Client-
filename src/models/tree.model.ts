@@ -1,6 +1,6 @@
 export class Tree {
-    id_tree     : number;
-    common_name : string;
-    style       : string;
-    name        : string;
+    id_tree     : Number;
+    common_name : String;
+    style       : String;
+    name        : String;
 }
