@@ -5,10 +5,10 @@
  * @class Task
  */
 export class Task {
-    id_task     : Number;
-    title       : String;
-    description : String;
+    id_task     : number;
+    title       : string;
     date        : Date;
-    start_time  : Date,
+    description : string;
+    start_time  : Date;
     end_time    : Date;
 }
