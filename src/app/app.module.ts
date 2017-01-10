@@ -8,6 +8,8 @@ import { SearchPage }                               from '../pages/Search/Search
 import { TaskPage }                                 from '../pages/Task/Task';
 import { NewBonsaiModal }                           from '../pages/MyTrees/NewBonsaiModal/NewBonsaiModal';
 import { TreeProfilePage }                          from '../pages/MyTrees/TreeProfilePage/TreeProfile';
+import { TaskDetailPage }                           from '../pages/Task/TaskDetail/TaskDetail';
+import { NewTask }                                  from '../pages/Task/NewTask/NewTask';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TreeProfilePage }                          from '../pages/MyTrees/TreeP
     CalendarPage,
     TaskPage,
     NewBonsaiModal,
-    TreeProfilePage
+    TreeProfilePage,
+    TaskDetailPage,
+    NewTask
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,7 +36,9 @@ import { TreeProfilePage }                          from '../pages/MyTrees/TreeP
     CalendarPage,
     TaskPage,
     NewBonsaiModal,
-    TreeProfilePage
+    TreeProfilePage,
+    TaskDetailPage,
+    NewTask
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
