@@ -13,8 +13,7 @@ export class NewBonsaiModal {
         public platform: Platform,
         public params: NavParams,
         public viewCtrl: ViewController,
-        private newTree: Tree
-    ) { }
+        public newTree: Tree) { }
 
     dismiss() {
         this.viewCtrl.dismiss();

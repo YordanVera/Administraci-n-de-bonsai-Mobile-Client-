@@ -27,10 +27,12 @@ export class MyTreesPage {
     addBonsai(){
         let modal = this.modalCtrl.create(NewBonsaiModal);
         modal.present();
-        modal.onDidDismiss((data) => {
-            this.treeService.newTree(data);
-            this.treeService.getTrees()
-            .then(trees => this.myTrees = trees);
+        modal.onDidDismiss(data => {
+            if(typeof data !== 'undefined'){
+                this.treeService.newTree(data);
+                this.treeService.getTrees()
+                .then(trees => this.myTrees = trees);
+            }
         });
     }
     openTreeProfile(tree){
