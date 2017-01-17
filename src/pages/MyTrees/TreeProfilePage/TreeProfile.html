@@ -3,6 +3,11 @@
         <ion-title>
             {{ tree.name }}
         </ion-title>
+        <ion-buttons *ngIf="option === 'task'" end>
+            <button ion-button icon-only (click)="newTask()">
+                <ion-icon name='add'></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
@@ -41,11 +46,11 @@
                     <h3>{{task.title}}</h3>
                 </ion-item>
                 <ion-item-options>
-                    <button ion-button color="light" icon-left>
+                    <button ion-button color="light" (click)="openMoreModal(task)" icon-left>
                         <ion-icon name="ios-more"></ion-icon>
                         Más
                     </button>
-                    <button ion-button color="primary" icon-left>
+                    <button ion-button color="primary" (click)="deleteTask(task)" icon-left>
                         <ion-icon name="trash"></ion-icon>
                         Eliminar
                     </button>
